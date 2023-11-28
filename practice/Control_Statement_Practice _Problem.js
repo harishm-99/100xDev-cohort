@@ -165,11 +165,82 @@ switch (num) {
 
 // Question-7:   Implement a switch case statement to determine the type of fruit based on a variable. Handle at least three different fruit options.
 
+let fruit = "Mango";
 
+console.log("\n")
+
+switch (fruit) {
+    
+    case 'Apple':
+        console.log("It is an Apple.");
+        break;
+    
+    case 'Papaya':
+        console.log("It is a Papaya.");
+        break;
+
+    case 'Mango':
+        console.log("It is a Mango");
+        break;
+}
 
 
 // Question-8:   WAP to categorize a given temperature into "low," "medium," or "high" ranges.
 
+let temp = 46;
+
+if (temp >= 0 && temp <= 40) {
+    console.log("The Temperature "+temp+" is low");
+}
+
+else if (temp > 40 && temp <= 80) {
+    console.log("The Temperature "+temp+" is medium");
+}
+
+else if (temp > 80 && temp <= 120) {
+    console.log("The Temperature "+temp+" is High");
+}
+
+else {
+    console.log("Invalid Entry");
+}
+
 // Question-9:   WAP that classifies a number as positive, negative, even, or odd.
 
+let numb = -901;
+
+if (numb > 0 && numb%2==0) {
+    console.log("The Number is Positive & Even");
+}
+
+else if (numb > 0 && numb%2==1) {
+    console.log("The Number is Positive & Odd");
+}
+
+else if (numb < 0 && numb%2==0) {
+    console.log("The Number is Negative & Even");
+}
+
+else if (numb < 0 && numb%2!=0) {
+    console.log("The Number is Negative & Odd");
+}
+
+else {
+    console.log("The Number is Invalid");
+}
+
+
 // Question-10:  WAP to validate a username. If the username is less than 6 characters, log "Username too short"; if it's more than 15 characters, log "Username too long"; otherwise, log "Username accepted."
+
+let username = 'harish';
+
+if (username.length < 6) {
+    console.log("Username too short !");
+}
+else if (username.length > 15) {
+    console.log("Username too long !");
+}
+
+else {
+    console.log("User Accepted");
+}
