@@ -31,5 +31,23 @@ console.log(a,b);
 
 // Spread Operator
 
+let arr1 = [3, 4, 5];
+let obj1={...arr1}
 
+console.log(obj1);
 
+function sum(v1, v2, v3) {
+    return v1 + v2 + v3;
+}
+
+console.log(sum(...arr1));// Spread operator used using function
+
+let obj2 = {
+    name:"Harish",
+    Company : "ABC Company",
+    address : "Dollar Street"
+}
+
+console.log({ ...obj2 });
+console.log({ ...obj2, name :"Rahul" });
+console.log({ name:Tushar, ...obj2 });//This will print the obj2 w/o changing any value
