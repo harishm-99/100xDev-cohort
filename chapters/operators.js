@@ -17,6 +17,6 @@
 // console.log("a!=b", a != b);//false
 
 // // Strictly not equals to according to type
-// console.log("a===b", a === b);//false
+// console.log("a===b", a === b);//false//
 // console.log("a!==b", a !== b);//true
 
