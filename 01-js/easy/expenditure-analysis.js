@@ -68,9 +68,8 @@ function calculateTotalSpentByCategory(transactions) {
 		});
 	}
 
-	console.log(output);
+	return output;
 }
 
-calculateTotalSpentByCategory({ itemName:"Tea Powder", category:"Tea", price:25, timestamp:"12:00 PM" });
 module.exports = calculateTotalSpentByCategory;
 
