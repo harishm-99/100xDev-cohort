@@ -32,6 +32,16 @@ class Animal{
         this.legCount = legCount;
         this.speaks = speaks;
     }
+
+    speak() {
+        console.log("Hi there, " + this.speaks);
+    }
+    static legs() {
+        console.log("Animal")
+    }
+    walk() {
+        
+    }
 }
 
 //Don't do this
@@ -42,6 +52,8 @@ class Animal{
 // }
 
 //Do This
+// Creating an Object
 let dog1 = new Animal('Dog', '4','bhow bhow');
 
-console.log('The animal is' , dog1.name, ".It speaks "+dog1.speaks+" and has ", dog1.legCount," legs")
+console.log('The animal is', dog1.name, ".It speaks " + dog1.speaks + " and has ", dog1.legCount, " legs")
+dog1.speak();// Call function on object
