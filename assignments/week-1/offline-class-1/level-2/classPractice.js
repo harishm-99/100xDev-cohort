@@ -1,4 +1,4 @@
-// Class, Math, JSON, Date, Object
+// Class
 
 const dog = {
     name: "Dog",
