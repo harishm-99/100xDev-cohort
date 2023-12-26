@@ -21,7 +21,7 @@
 
 // The same code which replaces callbacks with promises
 
-//Just the Pretty version of the code wth promises
+//Just the Pretty version of the code wth promises. It has three states pending, resolved, rejected
 
 // const fs = require("fs")
 
@@ -73,12 +73,13 @@
 // Why perform async fn when it can performd through simple fn.
 
 // //Normal Fn
-// function harishAsyncFn() {
-//     return "Hi there";
+// function harishAsyncFn(callback) {
+//     setTimeout(callback, 2000);
 // };
 
-// const data = harishNormalFn();
-// console.log(data);
+// harishAsyncFn(function () {
+//     console.log("Hello !");
+// })
 
 
 // We can actually but we will need to pass the call the callback which is what promises helps us with to write it in a cleaner fashion
@@ -86,12 +87,12 @@
 // Intimidating Async fn
 function harishAsyncFn() {
     const p = new Promise(function (resolve) {
-        resolve("Hi there");
+        setTimeout(resolve,2000);
     });
     return p;
 };
 
 const value = harishAsyncFn();
-value.then(function(data) {
-    console.log(data);
+value.then(function() {
+    console.log("Hi there !");
 })
