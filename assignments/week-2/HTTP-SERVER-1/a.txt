@@ -1,1 +1,1 @@
-Hi there, from a.txt
+This is the read file
