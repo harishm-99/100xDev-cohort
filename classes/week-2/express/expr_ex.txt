@@ -1,0 +1,13 @@
+Request Methods:-
+
+GET - Going for a consultation to get a check up
+POST - Going to get a new kidney inserted(New Operation)
+PUT - Going to get a kidney replaced(Update)
+DELETE - Going to get a kidney removed
+
+Status Codes:-
+1. 200 - Everything went fine
+2. 404 - Doctor is not in the hospital(Page/Route Not Found)
+3. 500 - Mid Surgery light went away()
+4. 411 - Inputs were incorrect, wrong person came to surgery
+5. 403 - You were not allowed in the hospital
