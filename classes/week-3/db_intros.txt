@@ -1,0 +1,3 @@
+Specifically(Many) but two big types of DBs:-
+1. SQL DBs(PostGres)
+2. NoSQL DBs(Mongo DB)
