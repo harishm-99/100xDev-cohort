@@ -1,0 +1,23 @@
+// Until now, we've been storing data in memory. This is bad for few reasons -
+
+// 1. Data can't be dynamic, if you update in memory objects, the updates are lost if the process restarts
+// 2. There are multiple servers in the real world
+
+// There are various types of dbs:-
+// 1. Graph DBs
+// 2. Vector DBs
+// 3. SQL DBs
+// 4. NoSQL DBs
+
+// MongoDB - MongoDB lets you create dbs
+// In each debugger, it lets us create tables(collections)
+// 2. In each table, it lets us dump JSOn data
+// 3. It is schemaless
+// 4. It scales well and is a decent choice
+
+// How does the be connect to the db?
+- Using Libraries.
+
+1. Express lets us create an HTTP servers
+2. Jsonwebtokens library lets us create jwts
+3. moongoose lets us connect to our db
