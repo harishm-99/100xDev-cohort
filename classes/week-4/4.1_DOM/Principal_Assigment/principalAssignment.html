@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script>
+        async function interestCalculator(){
+            const a= document.getElementById("pValue").value; 
+            const b= document.getElementById("rate").value; 
+            const c= document.getElementById("time").value;
+            
+            const response = await fetch("https://sum-server.100xdevs.com/interest?principal="+a+"&rate="+b+"&time="+c);
+            const ans = await response.text();
+
+            document.getElementById("displayAns").innerHTML=ans;
+            
+        }
+    </script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Interest Calculator</title>
+</head>
+<body>
+    <input id="pValue" type="text" placeholder="Principal value"><br><br>
+    <input id="rate" type="text" placeholder="Rate in %"><br><br>
+    <input id="time" type="text" placeholder="Time in years"><br><br>
+    <button onclick="interestCalculator()">Calculate the interest</button><br><br>
+    <div id="displayAns"></div>
+</body>
+</html>
