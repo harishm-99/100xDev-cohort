@@ -1,0 +1,3 @@
+Ina todo application => Todo array is a state variable.
+
+State - Any variable that react needs to conciously watch or if this thing updates dom is going to change so to watch is very carefully.

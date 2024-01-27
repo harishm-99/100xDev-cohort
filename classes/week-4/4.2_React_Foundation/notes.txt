@@ -1,0 +1,24 @@
+// Dom Manipulation APIs
+Extra funcs. DOM provides :-
+1. document.createElement
+2. document.appendChild
+3. element.setAttribute
+4. element.children
+
+-WHat if there is a server where these todos are put
+-What if we update a TOdo from our mobile app, We will get back the new array of Todos on the FE.
+-How will we update the DOM then?
+-We only have a addTodo fn, We don't have an updateTodo or removeTodo fn yet
+
+State - It is a variable(array of posts like username, no. of notifications, user profile image etc.)
+
+// Types of WEbsites: -
+// 1. Static
+// 2. Dynamic
+
+// DOM Manipulation - It is very hard to write as a dev.Making dynamic websites , with the primitives that DOM provides us is very hard
+
+What is the easiest way to create a dynamic frontend website?// React DOM/ React Native Defination
+1. Update a state variable
+2. Delegate athe task of figuring out diff. to a hefty function.
+3. Tell the hefty function how to add, update and remove elelments.

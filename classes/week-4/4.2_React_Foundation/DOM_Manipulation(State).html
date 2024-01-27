@@ -1,0 +1,97 @@
+<!-- <html>
+    <head>
+        <title>Add todo</title>
+    </head>
+    <body>
+        <script>
+            let globalId = 1;
+
+            function markAsDone(todoId){
+                const parent = document.getElementById(todoId);
+                parent.children[2].innerHTML = "Done !";
+            }
+
+            function createChild(title, description,id){
+                const child = document.createElement("div");
+                const firstGrandchild = document.createElement("div");
+                firstGrandchild.innerHTML = title;
+                const secondGrandchild = document.createElement("div");
+                secondGrandchild.innerHTML = description;
+                const thirdGrandchild = document.createElement("button");
+                thirdGrandchild.innerHTML = "Mark as Done";
+                thirdGrandchild.setAttribute("onclick",`markAsDone(${id})`);
+                child.appendChild(firstGrandchild);
+                child.appendChild(secondGrandchild);
+                child.appendChild(thirdGrandchild);
+                child.setAttribute("id",id);
+
+                return child;
+            }
+
+            function todo(){
+                const title = document.getElementById('title').value;
+                const description = document.getElementById('description').value;
+
+                const parent = document.getElementById('display');
+                parent.appendChild(createChild(title, description, globalId++));
+            }
+        </script>
+
+        <input id="title" type="text" id="title">
+        <input id="description"type="text" id="description">
+        <button onclick="todo()">Add Todo</button>
+        <div id="display"></div>
+    </body>
+</html> -->
+
+<!-- state -->
+
+<html>
+    <head>
+        <title>DOM Manipulation from Server</title>
+    </head>
+    <body>
+        <input id="title" type="text" id="title">
+        <input id="description"type="text" id="description">
+        <div id="display"></div>
+        
+        <script>
+
+            function createChild(title,description,id){
+                const child = document.createElement("div");
+    
+                const child1 = document.createElement("div");
+                child1.innerHTML=title;
+                const child2 = document.createElement("div");
+                child2.innerHTML=description;
+                const child3 = document.createElement("button");
+                child3.innerHTML="Mark as Done";
+                // child3.setAttribute("onclick",`markAsDone(${id})`);
+                child.appendChild(child1);           
+                child.appendChild(child2);           
+                child.appendChild(child3);
+                child.setAttribute("id", id);   
+                
+                return child;
+            }
+    
+            function getDomAccToState(state){
+                const parent = document.getElementById('display');  
+                parent.innerHTML= '';
+                for(let i=0;i<state.length;i++){
+                    const child = createChild(state[i].title,state[i].description, state[i].id);
+                    parent.appendChild(child);
+                }
+            }
+    
+            window.setInterval(async function(){
+                const response = await fetch('https://sum-server.100xdevs.com/todos');
+                const json = await response.json();
+
+                getDomAccToState(json.todos);
+            }, 1000);
+        </script>
+    
+    </body>
+    
+</html>
