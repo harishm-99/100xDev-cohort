@@ -1,0 +1,38 @@
+
+<!-- Debouncing and throttling concepts -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <script>
+
+        //debouncing, throttling - minimizing the no. of BE requests in this case onput is sending multiple BE calls very fast
+        
+        let timeout;
+        function debouncedgetSum(){
+            //delay the call to getSum until i've not been called to 100ms and I've been called atleast once 
+            clearTimeout(timeout);//We need to clear the old timeout so that the debpuncing may work correctly
+            timeout = setTimeout(function(){
+                getSum()
+            },1000)
+        }
+        
+        async function getSum(){
+            let num1 = document.getElementById("firstNumber").value;
+            let num2 = document.getElementById("secondNumber").value;
+            const response = await fetch("https://sum-server.100xdevs.com/sum?a="+ num1 + "&b=" + num2);
+            const ans = await response.text();
+
+            document.getElementById("display").innerHTML=ans;
+        }
+    </script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum Calculator</title>
+</head>
+<body>
+    <input oninput="debouncedgetSum()" id="firstNumber" class="inputs" type="text" placeholder="First input"><br><br>
+    <input oninput="debouncedgetSum()" id="secondNumber" class="inputs" type="text" placeholder="Second input"><br><br>
+    <div id="display"></div>
+</body>
+</html>

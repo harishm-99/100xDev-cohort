@@ -1,0 +1,43 @@
+// DOM(Document Object Model) - The DOm API is a programming interface for web documents. It represents the page so that programs can change the document structure, style and content. The DOM represents the document as a tree of objects; each object represents the document as a tree of objects; each object represents a part of the page.
+
+//Extra functions for JS:-
+/* setTimeout, fetch, setInterval, document*/
+
+// browser JS = JS spec(ECMAScript Standard) + extra functions
+
+//Extra funcs for node:-
+/* setTimeout, fs, http */
+
+// NodeJS = JS Spec. + extra funcs.
+
+// What does dynamic mean :-
+// 1. Changing the elements on the website once the website is loaded
+// 2. Actually calculating the sum based on the inputs and rendering it on the screen
+
+// DOM - manipulate HTML using JS
+
+//Get Element Attribute :-
+
+//document.getElementbyid("idname")
+
+
+//document.getElementbyclass("classname")// displays an array of all the classes
+//document.getElementbyclass("classname")[arrayElementnumber]// displays the particular class from the array
+
+
+// buttons :-
+
+/*onChange - As soon as the input changes the output changes, 
+onInput - input is displayed on output, 
+onClick - the output after i click it*/
+
+// QuerySelector Attribute :-
+
+//document.queryselector("#idname");// displays by id name
+//document.queryselector("".classname"); //displays by classname
+//document.queryselector("div"); //displays the first div
+//document.querySelector("div#display2");// displays the particular div by classname or id
+//document.queryselectorAll(#id);// displays all the ids inside an array
+
+
+// debouncing/delayed sending out of requests - Don't immediately send out requests in situation where the user will slowly add inputs and we need to wait

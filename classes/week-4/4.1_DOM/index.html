@@ -1,0 +1,71 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+    <script>
+        function getSum(){
+            let num1 = document.getElementById("firstNumber").value;//getting the value by id
+            let num2 = document.getElementById("secondNumber").value;
+
+            // converting and adding string value 
+
+            document.getElementById("display").innerHTML=parseInt(num1)+parseInt(num2);// displaying the values
+        }
+    </script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum Calculator</title>
+</head>
+<body>
+    <input id="firstNumber" class="inputs" type="text" placeholder="First name"><br><br>
+    <input id="secondNumber" class="inputs" type="text" placeholder="Second name"><br><br>
+    <button onclick="getSum()">Calculate Sum</button><br><br>
+    <div id="display"></div>
+</body>
+</html> --><br>
+
+
+<!-- Sending Call to Backend Server -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+    <script>
+        function getSum(){
+            //debouncing, throttling
+            let num1 = document.getElementById("firstNumber").value;
+            let num2 = document.getElementById("secondNumber").value;
+
+            //Other than fetch there is a cleaner way to do this - AXIOS library(new technology)
+ 
+            fetch("https://sum-server.100xdevs.com/sum?a="+ num1 + "&b=" + num2)// asynchronous call
+                .then(function(response){
+                    response.text()// It is an asynchronous call so the pending promise need to be resolved.
+                        .then(function(ans){
+                            document.getElementById("display").innerHTML=ans;
+                        })
+                })
+        }
+
+        // The same function in better way(async await) can be writte as:-
+
+        async function asyncGetSum(){
+            let num1 = document.getElementById("firstNumber").value;
+            let num2 = document.getElementById("secondNumber").value;
+            const response = await fetch("https://sum-server.100xdevs.com/sum?a="+ num1 + "&b=" + num2);
+            const ans = await response.text();
+
+            document.getElementById("display").innerHTML=ans;
+        }
+    </script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum Calculator</title>
+</head>
+<body>
+    <input id="firstNumber" class="inputs" type="text" placeholder="First name"><br><br>
+    <input id="secondNumber" class="inputs" type="text" placeholder="Second name"><br><br>
+    <button onclick="getSum()">Calculate Sum by promises</button><br><br>
+    <button onclick="asyncGetSum()">Calculate Sum by Async await</button><br><br>
+    <div id="display"></div>
+</body>
+</html> -->
