@@ -1,0 +1,110 @@
+Database - It is a place where data is stored persistently.
+
+Database is consistently persistent.
+
+Examples of data stored in dbs:-
+
+For LinkedIn-
+1. User Database
+2. Users posts
+3. Users connection relationships
+4. Messages
+
+Why don't we let the user hit the db directly?
+What extra does the http server provide exactly?
+
+-1. Databases were created using protocols that browsers don't understand.
+-2. Databases don't have granual access as a first class citizen. Very hard to do user specific access in them.
+-3. There are some databases(firebase) that let us get rid of the http server and try their best to provide granola access.
+
+Databases usually allow access to 4 primitives:-
+1. Create Data
+2. Read Data
+3. Update Data
+4. Delete Data
+
+Popularly known as CRUD
+
+Prisma(Industry Standard ORM) - A library to talk to DB (most popular).
+
+In mongoose, first we have to define the schema. Since mongoDB is Schemaless. 
+Monoose makes us define schema for things like autocompletions/ Validating data before it goes in the DB to make sure we're doing things right. Schemaless Dbs can be very dangerous, using schemas in mongoDB makes it slightly less Dangerous.
+
+Syntax of Mongoose:-
+
+//Schema 
+const UserSchema = new mongoose.Schema({
+    username: String,
+    password: String
+});
+
+
+const User = mongoose.model('User',UserSchema);
+
+//Model - Final Object on which we can call the CRUD applications(Here it is User)
+
+Syntaxes:-
+
+//Creating
+User.create({
+    username:"Harish",
+    password:"harish123"
+});
+
+//Reading
+User.findById("1");// One Entry
+//Difference btw findOne by findOne is finding One entry with this details Vs find is find multiple entries with this username.
+User.findOne({// Multiple Entries
+    username:"Harish"
+})
+User.find({
+    username:"Harish"
+})
+
+Simlarly there are many functions on this Users model:- like updateMany, updateOne,findOneAndUpdate, findOneAndDelete
+
+
+// updateOne
+
+User.updateOne(// Adding new entry in course
+    {"id":"1"},
+    { $push:{purchasedCourses: courseId}}
+)
+
+Updating one thing .updateOne and Update many entries .update
+
+User.Update({
+    id:"1"
+},{
+    password:"newPassword"
+})
+
+// Giving free access to all users
+User.update({}, {// {} - represents every row in the field
+    premium: true
+})
+
+//Deleting
+User.deleteMany({})// deleting Everything from Users table
+
+User.deletOne({
+    username:"Harish@mail.com"
+})
+
+// Updating
+
+User.UpdateOne({// update one entry
+    id:"1"
+})
+
+
+User.update({},{// Update multiple entries, In this case all entries 
+    premium:true
+})
+
+Three Jargons in DBs
+1. Cluster-
+2. Database-
+3. Table/Collection-
+
+//"$push","$in"
