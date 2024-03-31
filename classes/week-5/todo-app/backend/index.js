@@ -5,7 +5,9 @@ const cors = require('cors');
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin:"http://localhost:5173"
+}));
 
 app.post('/todos',async function (req, res) {
     const createPayLoad = req.body;
