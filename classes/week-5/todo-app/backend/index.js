@@ -42,7 +42,7 @@ app.put('/completed',async function (req, res) {
         });
         return
     }
-    await todo.update({
+    await todo.updateOne({
         _id: updatePayLoad.id
     }, {
         completed:true
@@ -51,3 +51,5 @@ app.put('/completed',async function (req, res) {
         msg:'Todo marked as completed'
     })
 })
+
+app.listen(3000);
