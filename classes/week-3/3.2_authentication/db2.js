@@ -7,7 +7,9 @@ app.use(express.json());
 mongoose.connect('mongodb+srv://harishm-99:7SfldfRRPKIHbdd8@cluster0.z30flns.mongodb.net/')
 
 const User = mongoose.model('Users', {
-    name: String, email: String, password: String
+    name: String,
+    email: String,
+    password: String
 })
 
 app.post('/signup', async function (req, res) {
