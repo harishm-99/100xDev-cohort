@@ -54,3 +54,9 @@ we can change the location of the .js files in 'outDir' in Modules section of 't
 3. outDir
 4. noImplicitAny
 5. removeComments
+
+# interfaces
+
+# types
+
+# enums

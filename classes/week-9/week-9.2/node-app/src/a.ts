@@ -166,31 +166,33 @@
 
 // 2. Intersection - Type that has every property of multiple types/interfaces
 // * We cannot do this in interfaces
-type Employee = {
-    name: string;
-    startDate: Date;
-}
+// type Employee = {
+//     name: string;
+//     startDate: Date;
+// }
 
-interface Manager {
-    name: string;
-    department: string;
-}
+// interface Manager {
+//     name: string;
+//     department: string;
+// }
 
 
 // interface TechLead = Employee & Manager;// error - cannot use interface to intersect
-type TechLead = Employee & Manager;
+// type TechLead = Employee & Manager;
 
-const t: TechLead = {
-    name: "Harish",
-    startDate: new Date(),
-    department: "Dvelopment"
-};
+// const t: TechLead = {
+//     name: "Harish",
+//     startDate: new Date(),
+//     department: "Dvelopment"
+// };
 
 // What is the difference between interface and type:-
 // - Interface can be extend in the class that types cannot  and types let us do ORs/ANDs and unions and intersection that interface cannot.
 
 
 // Arrays
+
+// 1.
 
 // type ArrType = number[];
 // interface ArrType { number[]}// cannot define using interface
@@ -208,22 +210,130 @@ const t: TechLead = {
 
 // console.log(maxValue([1, 2, 3]));
 
-interface TypeUsers {
-    firstName: string;
-    lastName: string;
-    age: number;
+
+//2.
+
+// interface TypeUsers {
+//     firstName: string;
+//     lastName: string;
+//     age: number;
+// }
+
+// function isLegal(users: TypeUsers[]) {
+//     return users.filter(x => x.age >= 18);
+// }
+
+// console.log([{
+//     firstName: "Harish",
+//     lastName: "Mahato",
+//     age: 25
+// },{
+//     firstName: "Kumar",
+//     lastName: "Mahato",
+//     age: 25
+// }]);
+
+
+
+// enums - Enumerations in ts are a feature that allows to define named constants. Enumerations helps to represent set of constant values, which might otherwise be represented as number or strings. (Limited set of inputs to constants)
+
+// (enums)fn using types
+
+// type KeyInput = "Up" | "Down" | "Left" | "Right";
+
+// function doSomething(keyPressed: KeyInput) {
+    
+// };
+
+// doSomething("Up");
+
+// Same thing using enums but it defines the data perfectly
+// 1. cleaner
+// 2. suggestions in vscode after enums
+//
+
+// enum Direction{
+//     Down,
+//     Left,
+//     Right,
+//     Up
+// }
+
+// Enums by default has numbers as values in converted js
+
+//Giving string values to enums
+// enum Direction{
+//     Down = "down",// all strings values needs to be entered
+//     Left = "left",
+//     Right = "right",
+//     Up = "up"
+// }
+
+// enum Direction{
+//     Up = 1,//1
+//     Down = 2,//2
+//     Left,//3
+//     Right,//4
+// }
+
+// enum Direction{
+//     Up = 10,//10
+//     Down = 20,//20
+//     Left,//21
+//     Right,//22
+// }
+
+// function doSomething(keyPressed: Direction) {
+// function doSomething(keyPressed: Direction) {
+//     if (keyPressed = Direction.Down) {
+        
+//     }
+// }
+
+// doSomething(Direction.Up);
+// doSomething(Direction.Down);
+// doSomething(Direction.Left);
+// doSomething(Direction.Right);
+
+// console.log(Direction.Up);
+// console.log(Direction.Down);
+// console.log(Direction.Left);
+
+// Another usecase of enums :-
+
+// - Use to define status codes in expressjs so that code reusability can be enhanced
+
+// enum ResponseStatus{
+//     Success = "200",
+//     Not_Found = "404",
+//     Error = "500"
+// }
+
+// const app = express();
+
+// app.get('/', (req, res){
+//     if (req.query.userId) {
+//         // res.status(404).json({});
+//         res.status(ResponseStatus.Not_Found).json({});
+//     }
+//     res.json({});
+// })
+
+// app.post('/', (req, res){
+//     if (req.query.userId) {
+//         // res.status(404).json({});
+//         res.status(ResponseStatus.Not_Found).json({});// enums code reusability
+//     }
+//     res.json({});
+// })
+
+type Input = number | string;
+
+// function firstEl(arr: Input[]) {
+function firstEl(arr: number | string) {
+    return arr[0];   
 }
 
-function isLegal(users: TypeUsers[]) {
-    return users.filter(x => x.age >= 18);
-}
+const value = firstEl(["Harish"])
 
-console.log([{
-    firstName: "Harish",
-    lastName: "Mahato",
-    age: 25
-},{
-    firstName: "Kumar",
-    lastName: "Mahato",
-    age: 25
-}]);
+console.log(value.toUpperCase());
